@@ -26,9 +26,13 @@ app.get("/allTasks", async (req, res) => {
 
 app.post("/updateTask", async (req, res) => {
   //  can be used with params
-  const updatetask = await Task.findByIdAndUpdate("680fc026c0b91825fbd4cddf", {
-    isDone: true,
-  },{new:true});
+  const updatetask = await Task.findByIdAndUpdate(
+    "680fc026c0b91825fbd4cddf",
+    {
+      isDone: true,
+    },
+    { new: true } //new parameter to spesify the reurn of new objecte
+  );
 
   res.send(updatetask);
 });
